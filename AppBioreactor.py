@@ -81,10 +81,6 @@ else:
     st.write('Awaiting CSV file to be uploaded.')
 
 # 3. Forecasting data
-#with st.sidebar:
-        #st.write("Select the example file you used to display its empirical data for feedstock characteristics :")
-
-        #option = st.sidebar.selectbox('Results',('Example 1','Example 2','Example 3'))
 
 st.header('Empirical data')
 st.markdown("""
