@@ -86,7 +86,7 @@ elif'Example 3' in option:
             st.write(ex3_df)
 
 st.markdown("""
-Data are expressed in UNIT(mol/L)
+Data are expressed in UNIT (mol/L)
 
 S_SASin	= Readily biodegradable substrate
 
