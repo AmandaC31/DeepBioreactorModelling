@@ -80,7 +80,7 @@ if input_df is not None:
 else:
     st.write('Awaiting CSV file to be uploaded.')
 
-# 3. Forecasting data
+# 3.  Forecasting data
 
 st.header('Empirical data')
 st.markdown("""
