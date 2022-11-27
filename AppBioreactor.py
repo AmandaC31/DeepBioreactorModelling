@@ -52,7 +52,7 @@ if input_df is not None:
         st.subheader('Recorded for a 24 hour period')
         st.write(input_df[:96])
     st.subheader('Dissolved oxygen')
-    st.line_chart( x="Time (hour)", y="DO (mol/L)", data=input_df)
+    st.line_chart(x="Time (hour)", y="DO (mol/L)", data=input_df)
     st.subheader('Nitrate concentration')
     st.line_chart(x="Time (hour)", y="NO3 (mol/L)", data=input_df)
     st.subheader('Ammonia concentration')
