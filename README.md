@@ -19,9 +19,9 @@ The models presented here predict the following variables:
 The models use only time-series of the first-day (15 minute intervals) of the following sensor data:
 
 1. Dissolved Oxygen Concentration (*units*)
-2. Ammonia-Ion Concentration ($mol/L$)
-3. Nitrate-Ion Concentration ($mol/L$)
-4. $H^+$-Ion Concentration ($mol/L$ &= $10^{-pH}$)
+2. Ammonia-Ion Concentration ( $mol/L$)
+3. Nitrate-Ion Concentration ( $mol/L$)
+4. $H^+$-Ion Concentration ( $mol/L &= 10^{-pH}$)
 
 This work was conducted as part of a Final Design Project for the Bioresource Engineering (B.Eng.) program at McGill University.
 For more details on model training and other background information please see the report by [Crèche & Harms (2022)]().
