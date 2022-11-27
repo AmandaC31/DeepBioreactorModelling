@@ -1,10 +1,13 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import plotly.figure_factory as ff
-import matplotlib.pyplot as plt
-#import seaborn as sns
+from numpy.core.defchararray import strip
 
+#import numpy as np
+#import plotly.figure_factory as ff
+#import matplotlib.pyplot as plt
+from models import Example
+
+input_df = None
 
 st.title('Deep Learning for Bioreactor Modelling and Control-Optimization')
 st.markdown("""
@@ -14,25 +17,37 @@ This app performs allows Bioreactor start up to determine their feedstock charac
 #Displaying full data
 
 st.sidebar.header('User Input file')
-st.sidebar.markdown('''           
-[Example 1 CSV input file](https://raw.githubusercontent.com/AmandaC31/Bioreactor-Modelling/main/Example1.csv)
+#st.sidebar.markdown('''
+#[Example 1 CSV input file](https://raw.githubusercontent.com/AmandaC31/Bioreactor-Modelling/main/Example1.csv)
 
-[Example 2 CSV input file](https://raw.githubusercontent.com/AmandaC31/Bioreactor-Modelling/main/Example2.csv)
+#[Example 2 CSV input file](https://raw.githubusercontent.com/AmandaC31/Bioreactor-Modelling/main/Example2.csv)
 
-[Example 3 CSV input file](https://raw.githubusercontent.com/AmandaC31/Bioreactor-Modelling/main/Example3.csv)
+#[Example 3 CSV input file](https://raw.githubusercontent.com/AmandaC31/Bioreactor-Modelling/main/Example3.csv)
 
-''')
+#''')
+#with st.sidebar:
 
-
+    #print(example_number)
 #uploading csv file
 uploaded_file = st.sidebar.file_uploader("Upload your CSV file with recorded data to display them and obtain your feedstock characteristics", type=["csv"])
 if uploaded_file is not None:
    input_df = pd.read_csv(uploaded_file)
-
+#elif not(example_number == 1234):
+#   input_df = Example().example_data[example_number-1]
+else:
+    st.write("Select an example file to try:")
+    example = st.sidebar.selectbox(label='Use Example',
+                                   options=(  # '<None selected>',
+                                       'Example 1', 'Example 2', 'Example 3'))
+    # try:
+    example_number = int(example.split(" ")[1])
+    prepared = Example()
+    st.sidebar.write(prepared.disp_example(example_number))
+    input_df = prepared.display_data[example_number]
 
 # 1. display recorded data from csv file table and graph
 st.header('Your bioreactor recorded data ')
-if uploaded_file is not None:
+if input_df is not None:
     if st.checkbox('Show dataset'):
         st.subheader('Recorded for a 24 hour period')
         st.write(input_df[:96])
@@ -53,7 +68,7 @@ else:
 
 # 2. Prediction of feedstocks parameters
 st.header('Prediction of feedstock parameters')
-if uploaded_file is not None:
+if input_df is not None:
     st.markdown("""
     Based on your recorded data, your feedstock characteristics are the following: 
     """)
@@ -77,18 +92,9 @@ else:
 
 
 # 3. Forecasting data
-with st.sidebar:
-        st.write("Select bioreactor process characteristics for forecasting:")
-#def user_input_features():
-        Biotype = st.sidebar.selectbox('Results',('Example 1','Example 2','Example 3'))
-        data = {'Bioreactor type': Biotype
-                }
-        features = pd.DataFrame(data, index=[0])
-        if st.sidebar.selectbox('Example 1')
-            st.write(1234)
 
         #return features
-st.header('Forecasting')
+#st.header('Forecasting')
 #input_df_1 = user_input_features()
 #st.write(input_df_1)
 
