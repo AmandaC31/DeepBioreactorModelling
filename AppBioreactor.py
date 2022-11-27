@@ -60,48 +60,44 @@ if uploaded_file is not None:
 else:
     st.write('Awaiting CSV file to be uploaded.')
 
-
-
-
-
-
-
-# Reads in saved prediction model
-#load_clf = pickle.load(open('XXX.plk', 'rb'))
-
-# Apply model to make predictions
-#prediction = load_clf.predict(input_df)
-
-
-#st.write([prediction])
-
-
 # 3. Forecasting data
 with st.sidebar:
-        st.write("Select bioreactor process characteristics for forecasting:")
-#def user_input_features():
-        Biotype = st.sidebar.selectbox('Results',('Example 1','Example 2','Example 3'))
-        data = {'Bioreactor type': Biotype
-                }
-        features = pd.DataFrame(data, index=[0])
-        if st.sidebar.selectbox('Example 1')
-            st.write(1234)
+        st.write("Select the example file you used to display its empirical data for feedstock characteristics :")
 
-        #return features
-st.header('Forecasting')
-#input_df_1 = user_input_features()
-#st.write(input_df_1)
+        option = st.sidebar.selectbox('Results',('Example 1','Example 2','Example 3'))
+
+st.header('Empirical data')
+st.markdown("""
+Below are displayed the actual data for feedstocks characteristics so you can compare with the prediction. 
+""")
+
+#Reading feedstock characteristics for examples files
+ex1_df = pd.read_csv("feedstock1.csv")
+ex2_df = pd.read_csv("feedstock2.csv")
+ex3_df = pd.read_csv("feedstock3.csv")
+
+
+#Displaying feedstock characteristics depending on the example file chosen by the user
+if 'Example 1' in option:
+            st.write(ex1_df)
+elif 'Example 2' in option:
+            st.write(ex2_df)
+elif'Example 3' in option:
+            st.write(ex3_df)
 
 st.markdown("""
-The forecasting option is still in progress and will soon be available!
+Data are expressed in UNIT  (mol/L)
+
+S_SASin	= Readily biodegradable substrate
+
+X_SASin	= Slowly biodegradable organic matter concentration
+
+S_NHASin = Soluble ammonia nitrogen concentration
+
+S_NDASin = Soluble biodegradable organic nitrogen concentration
+
+X_NDASin = Particulate (slowly) biodegradable organic nitrogen
 """)
 
 
-
-
-#df.hist()
-#st.pyplot()
-
-
-#st.area_chart(input_df["Days"])
 
