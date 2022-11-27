@@ -1,4 +1,4 @@
-[![Visit the Huggingface Space](https://huggingface.co/front/assets/huggingface_logo-noborder.svg)](https://huggingface.co/spaces)
+[![Huggingface Space](https://img.shields.io/badge/%F0%9F%A4%97-Visit%20our%20Huggingface%20Space-yellow.svg)](https://huggingface.co/spaces)
 
 # Deep-Bioreactor-Modelling
 
