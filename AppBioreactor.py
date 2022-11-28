@@ -30,11 +30,15 @@ st.sidebar.header('User Input file')
     #print(example_number)
 #uploading csv file
 uploaded_file = st.sidebar.file_uploader("Upload your CSV file with recorded data to display them and obtain your feedstock characteristics", type=["csv"])
+number = st.sidebar.number_input('Select a number between 0 and 10', min_value=0, max_value=10, value=0, step=1)
+
+
+
 if uploaded_file is not None:
    input_df = pd.read_csv(uploaded_file)
 #   input_df = Example().example_data[example_number-1]
 else:
-    example = st.sidebar.selectbox(label='Or select an example file',
+    example = st.sidebar.selectbox(label='Select an example file or upload your own data',
                                    options=(
                                        'Example 1', 'Example 2', 'Example 3'))
     if 'Example 1' in example:
@@ -43,6 +47,8 @@ else:
         input_df=pd.read_csv("example2.csv")
     elif 'Example 3' in example:
         input_df=pd.read_csv("example3.csv")
+
+
     # try:
     #example_number = int(example.split(" ")[1])
     #prepared = Example()
