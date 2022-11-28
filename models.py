@@ -16,8 +16,8 @@ COLUMN_NAMES = ["Model Type",
 class Model():
     def __init__(self, path):
         self.model = keras.models.load_model(path)
-        self.sample_maxes = [5.77305055620045, 0.009540294233475, 0.0058713081660306, 1.26923574748256e-08]
-        self.sample_mins = [0.0281795730197485, 0.0, 0.0, 0.0]
+        self.sample_maxes = [5.47953264264528, 0.009540294233475, 0.0058713081660306, 2.46425683526441e-08]
+        self.sample_mins = [0.0068592823106617, 0.0, 0.0, 0.0]
         self.label_maxes = [159.9858, 408.9682, 64.995, 12.9996, 33.998]
         self.label_mins = [2.5614e-02, 9.0985, 1.0017, 1.8174e-05, 9.5180e-03]
 
@@ -34,7 +34,6 @@ class Model():
     # un-scales the labels from [0,1] to the original range
     def un_scale(self, Y):
         un_scaled_Y = np.zeros(Y.shape)
-        print(Y)
         for i in range(5):
             un_scaled_Y[:, i] = (Y[:, i] * (self.label_maxes[i] - self.label_mins[i])) + self.label_mins[i]
         return un_scaled_Y

@@ -10,15 +10,15 @@ that was modified by us to simulate only one aerobic batch bioreactor instead of
 
 The models presented here predict the following variables:
 
-1. Readily Biodegradable Substrate (*units*)
-2. Slowly Biodegradable Organic Matter Concentration (*units*)
-3. Soluble Ammonia Nitrogen Concentration (*units*)
-4. Soluble Biodegradable Organic Nitrogen Concentration (*units*)
-5. Particulate (slowly) Biodegradable Organic Nitrogen (*units*)
+1. Readily Biodegradable Substrate ( $mg/L$)
+2. Slowly Biodegradable Organic Matter Concentration ( $mg/L$)
+3. Soluble Ammonia Nitrogen Concentration ( $mg/L$)
+4. Soluble Biodegradable Organic Nitrogen Concentration ( $mg/L$)
+5. Particulate (slowly) Biodegradable Organic Nitrogen ( $mg/L$)
 
 The models use only time-series of the first-day (15 minute intervals) of the following sensor data:
 
-1. Dissolved Oxygen Concentration (*units*)
+1. Dissolved Oxygen Concentration ( $mg/L$)
 2. Ammonia-Ion Concentration ( $mol/L$)
 3. Nitrate-Ion Concentration ( $mol/L$)
 4. $H^+$-Ion Concentration ( $mol/L = 10^{-pH}$)
