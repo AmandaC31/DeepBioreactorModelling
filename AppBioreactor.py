@@ -102,7 +102,7 @@ if input_df is not None:
     st.pyplot(fig1)
 
     st.subheader('Nitrate Concentration')
-    if st.checkbox('Show -log(mol/L)'):
+    if st.checkbox('Show -log(mol/L)', key="NO3"):
         fig2, ax2 = plt.subplots()
         ax2.plot(time, -np.log10(input_df.iloc[:96, NO3_col].to_numpy()))
         ax2.set(xlabel="Time (hours)", ylabel="NO3 (-log(mol/L))")
@@ -114,7 +114,7 @@ if input_df is not None:
         st.pyplot(fig2)
 
     st.subheader('Ammonia Concentration')
-    if st.checkbox('Show -log(mol/L)'):
+    if st.checkbox('Show -log(mol/L)', key="NH4"):
         fig3, ax3 = plt.subplots()
         ax3.plot(time, -np.log10(input_df.iloc[:96, NH4_col].to_numpy()))
         ax3.set(xlabel="Time (hours)", ylabel="NH4+ (-log(mol/L))")
