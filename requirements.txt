@@ -1,6 +1,6 @@
-tensorflow
+tensorflow>=2.10.0
 pandas
-numpy
-
+numpy>=1.23.5
+matplotlib>=3.6.2
 streamlit>1.8.1
 click==8.0

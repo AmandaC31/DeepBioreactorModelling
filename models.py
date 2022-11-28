@@ -5,8 +5,7 @@ from tensorflow import keras
 MODEL_PATHS = ["MLP_model.h5", "CNN_model.h5", "GRU_model.h5"]
 
 MODEL_NAMES = [["MLP"], ["CNN"], ["GRU"]]
-COLUMN_NAMES = \
-    ["Model Type",
+COLUMN_NAMES = ["Model Type",
      "Readily Biodegradable Substrate",
      "Slowly Biodegradable OM",
      "Soluble NH4-N Concentration",
