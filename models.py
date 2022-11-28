@@ -29,7 +29,7 @@ class Model():
     def scale(self, X):
         scaled_X = np.zeros(X.shape)
         for i in range(4):
-            scaled_X[i, :] = (X[i, :] - self.sample_mins[i]) ./ (self.sample_maxes[i] - self.sample_mins[i])
+            scaled_X[i, :] = (X[i, :] - self.sample_mins[i]) / (self.sample_maxes[i] - self.sample_mins[i])
         return scaled_X
 
     # un-scales the labels from [0,1] to the original range
@@ -41,8 +41,10 @@ class Model():
         return un_scaled_Y
 
     def predict_(self, X):
-        input = self.reshape(self.scale(X))
-        return self.un_scale(self.model.predict(input))
+        scaled = self.scale(X)
+        input = self.reshape(scaled)
+        prediction = self.model.predict(input)
+        return self.un_scale(prediction)
 
 
 class CNN_Model(Model):
