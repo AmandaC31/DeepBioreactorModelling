@@ -1,14 +1,20 @@
-[![Huggingface Space](https://img.shields.io/badge/%F0%9F%A4%97-Visit%20our%20Huggingface%20Space-yellow.svg)](https://huggingface.co/spaces)
+[![License: MIT](https://img.shields.io/github/license/AmandaC31/DeepBioreactorModelling)](https://github.com/AmandaC31/DeepBioreactorModelling/blob/master/LICENSE)
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://amandac31-deepbioreactormodelling-appbioreactor-chrvos.streamlit.app/)
+[![Model Training Code](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1a1GwUq8NcJ6-5fQmNlKK4jmmCuNsnxM_?usp=sharing)
 
 # Deep-Bioreactor-Modelling
 
-This [app](https://huggingface.co/spaces) allows bioreactor operators to determine their feedstock characteristics from reading only process sensors,
+This [app](https://amandac31-deepbioreactormodelling-appbioreactor-chrvos.streamlit.app/) allows bioreactor operators to
+determine their feedstock characteristics from reading only process sensors,
 letting them set up their physical models to optimize their process control with ease.
-The deep-models were trained on an [ASM1 model implementation](https://github.com/wwtmodels/Activated-Sludge-Models) by 
-[Flores-Alsina et al. (2015)](https://doi.org/10.1016/j.watres.2015.07.014) 
-that was modified by us to simulate only one aerobic batch bioreactor instead of a full waste-water-management plant.
+The deep-models were trained on data generated using a modified version of the 
+[ASM1 model implementation](https://github.com/wwtmodels/Activated-Sludge-Models) by 
+[Flores-Alsina et al. (2015)](https://doi.org/10.1016/j.watres.2015.07.014). 
+This implementation was modified by us to simulate only one aerobic batch bioreactor 
+instead of a full waste-water-management plant.
 
-The models presented here predict the following variables:
+The models presented here were trained in [Colab](https://colab.research.google.com/drive/1a1GwUq8NcJ6-5fQmNlKK4jmmCuNsnxM_?usp=sharing) 
+to predict the following variables:
 
 1. Readily Biodegradable Substrate ( $mg/L$)
 2. Slowly Biodegradable Organic Matter Concentration ( $mg/L$)
