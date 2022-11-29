@@ -81,13 +81,6 @@ except AssertionError:
     st.sidebar.write(Warning("You cannot have two different variables in the same column. \n"
                              "For the input data shape we expect (samples, variables)"))
 
-try:
-    assert (DO_col == 0 and NO3_col == 1 and NH4_col == 2 and MH_col == 3)
-
-except AssertionError:
-    st.write(Warning("When using examples columns need to be the following: Dissolved Oxygen Column = 0, "
-    "NO3 Column = 1, NH4 Column = 2, H+ Column = 3"))
-
 
 # 1. display recorded data from csv file table and graph
 st.header('Your bioreactor recorded data ')
