@@ -155,5 +155,5 @@ if uploaded_file is None:
     st.write(true_vals)
 
 st.markdown("""
-Data are expressed in the following mg/L
+Data are expressed in units of mg/L
 """)
