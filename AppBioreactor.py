@@ -31,7 +31,7 @@ NO3_col = 1
 NH4_col = 2
 MH_col = 3
 
-st.markdown("[![GitHub](https://img.shields.io/badge/GitHub-Source%20Code-orange)](https://github.com/AmandaC31/DeepBioreactorModelling/blob/master)")
+st.markdown("[![GitHub](https://img.shields.io/badge/GitHub-Source%20Code-orange)](https://github.com/AmandaC31/DeepBioreactorModelling/)")
 
 st.title('Deep Learning for Bioreactor Modelling and Control-Optimization')
 st.markdown("""
